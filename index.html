@@ -196,10 +196,7 @@
             transition: max-height 0.3s ease-out;
         }
         
-        .accordion.active .accordion-content {
-            max-height: 500px;
-        }
-        
+     
         .presentation-btn {
             position: fixed;
             bottom: 30px;
@@ -725,7 +722,7 @@ nav .dropdown a:hover {
                         <div class="absolute -top-10 -left-10 w-64 h-64 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
                         <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
                         <div class="relative floating">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Marketing Property" class="rounded-xl shadow-2xl border-4 border-white transform rotate-3">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Marketing Property" class="rounded-xl shadow-2xl w-full" />
                         </div>
                     </div>
                 </div>
@@ -3024,9 +3021,10 @@ nav .dropdown a:hover {
 <div id="presentation-progress" class="presentation-progress"></div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+  AOS.init();
+</script>
 // Inisialisasi saat window selesai dimuat
 window.addEventListener('load', function() {
     // Initialize AOS
@@ -3329,6 +3327,5 @@ function initCharts() {
     }
 }
 </script>
-  
 </body>
 </html>
