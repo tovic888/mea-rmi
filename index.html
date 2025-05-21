@@ -1,0 +1,3334 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEA - Presentasi Bisnis Properti Modern</title>
+    <meta name="description" content="Presentasi profesional Mulia Estate Agency, strategi digital, ROI, komisi, rekrutmen, dan roadmap pengembangan bersama PT Rumah Mulia Indonesia.">
+    <meta property="og:title" content="MEA - Mulia Estate Agency">
+    <meta property="og:description" content="Unit elite digital properti RMI. Strategi MEA menuju ekspansi dan pertumbuhan mandiri.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="https://i.imgur.com/yy0vB2n.png" type="image/png">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #d4af37;
+            --accent: #00b4d8;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, #2c5282 100%);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(to right, #d4af37, #f9d423);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .section-divider {
+            height: 100px;
+            background: linear-gradient(to bottom right, transparent 49%, var(--primary) 50%), 
+                        linear-gradient(to top right, var(--primary) 49%, transparent 50%);
+            background-size: 100% 50%;
+            background-repeat: no-repeat;
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .hover-scale {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.03);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.08);
+        }
+        
+        .stat-card {
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--secondary);
+            border: 4px solid var(--primary);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .highlight-card {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, rgba(212,175,55,0) 70%);
+            z-index: -1;
+            animation: rotate 15s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .progress-bar {
+            height: 6px;
+            border-radius: 3px;
+            background: linear-gradient(to right, var(--secondary), #f9d423);
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .map-container {
+            height: 500px;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .commission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+        
+        .timeline-horizontal {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .timeline-horizontal::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+        
+        .timeline-item-horizontal {
+            min-width: 300px;
+            margin-right: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .timeline-item-horizontal::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -10px;
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .accordion.active .accordion-content {
+            max-height: 500px;
+        }
+        
+        .presentation-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            background: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .presentation-btn:hover {
+            transform: scale(1.1);
+            background: var(--secondary);
+        }
+        
+        /* Presentation Mode Styles */
+        .presentation-mode {
+            overflow: hidden;
+        }
+        
+        .presentation-mode section {
+            display: none;
+            height: 100vh;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            overflow-y: auto;
+        }
+        
+        .presentation-mode section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .presentation-highlight {
+            animation: highlight 2s ease;
+        }
+        
+        @keyframes highlight {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            50% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        
+        .presentation-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: rgba(212, 175, 55, 0.3);
+            z-index: 9999;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+        
+        /* Mobile Menu Fixes */
+        #mobile-menu {
+            display: none;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 100%;
+            background: white;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            z-index: 40;
+        }
+        
+        #mobile-menu.active {
+            display: block;
+        }
+        
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            html, body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+            
+            .timeline-horizontal {
+                flex-direction: column;
+            }
+            
+            .timeline-item-horizontal {
+                min-width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .timeline-item-horizontal::before {
+                top: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .map-container {
+                height: 350px;
+            }
+            
+            .responsive-text {
+                font-size: 1.5rem !important;
+            }
+            
+            .responsive-text-sm {
+                font-size: 0.9rem !important;
+            }
+            
+            .responsive-padding {
+                padding: 1.5rem !important;
+            }
+            
+            .team-avatar {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .commission-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-container {
+                height: 250px;
+            }
+            
+            .presentation-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .map-container {
+                height: 300px;
+            }
+            
+            .responsive-text {
+                font-size: 1.3rem !important;
+            }
+            
+            .responsive-text-sm {
+                font-size: 0.8rem !important;
+            }
+        }
+
+        .zoomable-image {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .zoomable-image:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Image Modal Styles */
+        .imageModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            background-color: rgba(0,0,0,0.75);
+            padding: 1rem;
+        }
+        
+        .imageModal.active {
+            display: flex;
+        }
+        
+        .imageModal .modal-container {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .modalImage {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+        
+        .closeModal {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: rgba(0,0,0,0.7);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+            border: 2px solid white;
+        }
+        
+        @media (max-width: 768px) {
+            .imageModal .modal-container {
+                max-width: 95vw;
+                max-height: 95vh;
+            }
+            
+            .modalImage {
+                max-height: 85vh;
+            }
+            
+            .closeModal {
+                top: -10px;
+                right: -10px;
+                width: 30px;
+                height: 30px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Navigation Dropdown Styles */
+nav .group:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+}
+
+/* Mobile Accordion Styles */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion.active .accordion-content {
+    max-height: 500px;
+}
+
+.accordion.active i {
+    transform: rotate(180deg);
+}
+
+/* Mobile Menu Fixes */
+#mobile-menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    background: white;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    z-index: 40;
+}
+
+#mobile-menu.active {
+    display: block;
+}
+
+/* Tambahkan di bagian media queries */
+@media (max-width: 768px) {
+    /* Market Validation */
+    #market-validation .grid.md\\:grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Finance Projection */
+    #finance .grid.md\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    /* KPI Section */
+    #kpi .grid.md\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Perbaikan tabel KPI */
+    #kpi table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    /* Perbaikan chart containers */
+    .chart-container {
+        height: 250px !important;
+    }
+}
+
+        /* Navigation Dropdown Styles - Diperbaiki */
+nav .nav-item {
+    position: relative;
+}
+
+nav .dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 200px;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    z-index: 50;
+    padding: 0.5rem 0;
+}
+
+nav .nav-item:hover .dropdown {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+}
+
+nav .dropdown a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #4b5563;
+    transition: all 0.2s ease;
+}
+
+nav .dropdown a:hover {
+    background-color: #f3f4f6;
+    color: #1e40af;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.progress-grid {
+  display: grid;
+  gap: 1rem;
+}
+.progress-bar {
+  height: 10px;
+  background: linear-gradient(to right, #1a365d, #d4af37);
+  border-radius: 5px;
+}
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+     <!-- Navigation -->
+<nav class="fixed w-full z-50 bg-white text-gray-800 shadow-lg transition-all duration-300">
+    <div class="container mx-auto px-6 py-3">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center">
+                    <img src="https://i.imgur.com/yy0vB2n.png" alt="MEA Logo" class="h-12 mr-3">
+                    <span class="text-2xl font-bold text-blue-800">MEA</span>
+                </div>
+                <span class="hidden md:block text-sm opacity-80 text-gray-600">Mulia Estate Agency</span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <!-- Tentang Menu -->
+                <div class="nav-item relative">
+                    <button class="hover:text-blue-600 transition flex items-center py-2 px-1">
+                        Tentang <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="dropdown">
+                        <a href="#about" class="px-4 py-2 hover:bg-gray-100">Tentang MEA</a>
+                        <a href="#structure" class="px-4 py-2 hover:bg-gray-100">Struktur Tim</a>
+                        <a href="#schedule" class="px-4 py-2 hover:bg-gray-100">Jadwal Kerja</a>
+                    </div>
+                </div>
+                
+                <!-- Strategi Menu -->
+                <div class="nav-item relative">
+                    <button class="hover:text-blue-600 transition flex items-center py-2 px-1">
+                        Strategi <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="dropdown">
+                        <a href="#strategy" class="px-4 py-2 hover:bg-gray-100">Strategi Pemasaran</a>
+                        <a href="#market-validation" class="px-4 py-2 hover:bg-gray-100">Validasi Pasar</a>
+                        <a href="#kpi" class="px-4 py-2 hover:bg-gray-100">KPI & Monitoring</a>
+                    </div>
+                </div>
+                
+                <!-- Operasional Menu -->
+                <div class="nav-item relative">
+                    <button class="hover:text-blue-600 transition flex items-center py-2 px-1">
+                        Operasional <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="dropdown">
+                        <a href="#hardware" class="px-4 py-2 hover:bg-gray-100">Perangkat Kerja</a>
+                        <a href="#commission" class="px-4 py-2 hover:bg-gray-100">Komisi</a>
+                        <a href="#recruitment" class="px-4 py-2 hover:bg-gray-100">Rekrutmen</a>
+                    </div>
+                </div>
+                
+                <!-- Keuangan Menu -->
+                <div class="nav-item relative">
+                    <button class="hover:text-blue-600 transition flex items-center py-2 px-1">
+                        Keuangan <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="dropdown">
+                        <a href="#finance" class="px-4 py-2 hover:bg-gray-100">Proyeksi Keuangan</a>
+                        <a href="#roi" class="px-4 py-2 hover:bg-gray-100">ROI</a>
+                    </div>
+                </div>
+                
+                <a href="#mapping" class="hover:text-blue-600 transition py-2 px-1">Mapping</a>
+                <a href="#contract" class="hover:text-blue-600 transition py-2 px-1">Kontrak</a>
+                <a href="#kpi-system" class="hover:text-blue-600 transition py-2 px-1">Sistem KPI</a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden focus:outline-none" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="md:hidden bg-white w-full absolute left-0 top-full px-6 py-4 transition-all duration-300 shadow-lg hidden" id="mobile-menu">
+        <div class="space-y-2">
+            <!-- Accordion Item 1 -->
+            <div class="accordion">
+                <button class="w-full flex justify-between items-center py-2 font-medium text-left">
+                    <span>Tentang</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content pl-4">
+                    <a href="#about" class="block py-2 hover:text-blue-600">Tentang MEA</a>
+                    <a href="#structure" class="block py-2 hover:text-blue-600">Struktur Tim</a>
+                    <a href="#schedule" class="block py-2 hover:text-blue-600">Jadwal Kerja</a>
+                </div>
+            </div>
+            
+            <!-- Accordion Item 2 -->
+            <div class="accordion">
+                <button class="w-full flex justify-between items-center py-2 font-medium text-left">
+                    <span>Strategi</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content pl-4">
+                    <a href="#strategy" class="block py-2 hover:text-blue-600">Strategi Pemasaran</a>
+                    <a href="#market-validation" class="block py-2 hover:text-blue-600">Validasi Pasar</a>
+                    <a href="#kpi" class="block py-2 hover:text-blue-600">KPI & Monitoring</a>
+                </div>
+            </div>
+            
+            <!-- Accordion Item 3 -->
+            <div class="accordion">
+                <button class="w-full flex justify-between items-center py-2 font-medium text-left">
+                    <span>Operasional</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content pl-4">
+                    <a href="#hardware" class="block py-2 hover:text-blue-600">Perangkat Kerja</a>
+                    <a href="#commission" class="block py-2 hover:text-blue-600">Komisi</a>
+                    <a href="#recruitment" class="block py-2 hover:text-blue-600">Rekrutmen</a>
+                </div>
+            </div>
+            
+            <!-- Accordion Item 4 -->
+            <div class="accordion">
+                <button class="w-full flex justify-between items-center py-2 font-medium text-left">
+                    <span>Keuangan</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content pl-4">
+                    <a href="#finance" class="block py-2 hover:text-blue-600">Proyeksi Keuangan</a>
+                    <a href="#roi" class="block py-2 hover:text-blue-600">ROI</a>
+                </div>
+            </div>
+            
+            <a href="#mapping" class="block py-2 hover:text-blue-600">Mapping</a>
+            <a href="#contract" class="block py-2 hover:text-blue-600">Kontrak</a>
+            <a href="#kpi-system" class="block py-2 hover:text-blue-600">Sistem KPI</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white pt-32 pb-20 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-yellow-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+                <div class="absolute bottom-1/3 right-1/3 w-64 h-64 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+                <div class="absolute top-2/3 right-1/4 w-64 h-64 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+            </div>
+        </div>
+        <div class="container mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right" data-aos-delay="100">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight responsive-text">
+                        <span class="gold-gradient">MEA</span> Mulia Estate Agency
+                    </h1>
+                    <p class="text-xl mb-8 opacity-90 max-w-lg responsive-text-sm">
+                        Unit profesional pemasaran properti terpadu didukung penuh oleh <span class="font-semibold text-yellow-400">PT Rumah Mulia Indonesia</span>
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#about" class="px-8 py-3 bg-yellow-500 text-gray-900 rounded-lg font-bold text-center hover:bg-yellow-400 transition hover-scale shadow-lg">
+                            Mulai Jelajahi <i class="fas fa-arrow-down ml-2"></i>
+                        </a>
+                        <button id="presentation-mode" class="px-8 py-3 bg-white text-gray-900 rounded-lg font-bold text-center hover:bg-gray-100 transition hover-scale shadow-lg">
+                            Mode Presentasi <i class="fas fa-expand ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-delay="200">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -top-10 -left-10 w-64 h-64 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+                        <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+                        <div class="relative floating">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Marketing Property" class="rounded-xl shadow-2xl border-4 border-white transform rotate-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Tentang <span class="gold-gradient">MEA</span></h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    MEA (Mulia Estate Agency) adalah unit profesional yang dibentuk untuk menjalankan sistem pemasaran properti secara terpadu, terstruktur, dan mandiri.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover-scale highlight-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-yellow-500 mb-4">
+                        <i class="fas fa-bullseye text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Visi</h3>
+                    <p class="text-gray-600">Menjadi kekuatan utama dalam strategi pemasaran proyek-proyek PT Rumah Mulia Indonesia dengan sistem terpadu dan mandiri.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover-scale highlight-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-cyan-500 mb-4">
+                        <i class="fas fa-tasks text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Misi</h3>
+                    <p class="text-gray-600">Membangun tim pemasaran yang solid dan propertitif dengan mengoptimalkan pemasaran digital dan offline secara efisien.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover-scale highlight-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-flag-checkered text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Proyek Pertama</h3>
+                    <p class="text-gray-600">Kertamulya Residence - Proyek properti unggulan pertama yang akan dipasarkan oleh tim MEA.</p>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-blue-800 to-blue-600 text-white rounded-xl p-8 md:p-12 shadow-xl hover-scale" data-aos="fade-up">
+                <div class="md:flex items-center">
+                    <div class="md:w-2/3 mb-8 md:mb-0 md:pr-8">
+                        <h3 class="text-2xl font-bold mb-6 text-yellow-400">Fase Operasional Awal</h3>
+                        <p class="mb-6 text-blue-100">
+                            MEA akan beroperasi penuh selama 6 bulan pertama dengan pendanaan penuh dari PT Rumah Mulia Indonesia sebesar Rp 253.900.000. Fokus utama pada pembentukan tim, sistem, dan pemasaran awal untuk proyek Kertamulya Residence.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="mr-4">
+                                <i class="fas fa-check-circle text-yellow-400 text-2xl"></i>
+                            </div>
+                            <p class="text-blue-100">
+                                Tidak ada biaya sewa kantor karena menggunakan fasilitas PT Rumah Mulia Indonesia.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 bg-white bg-opacity-10 rounded-lg p-6 glass-card">
+                        <h4 class="font-bold mb-4 text-center">Total Pendanaan Awal</h4>
+                        <div class="text-4xl font-bold text-center text-yellow-400 mb-2">253 <span class="text-3xl">JT</span></div>
+                        <p class="text-sm text-blue-200 text-center">Untuk 6 bulan operasional + perangkat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Structure Section -->
+    <section id="structure" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Struktur <span class="gold-gradient">Tim & Operasional</span></h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                    Tim profesional dengan pembagian tugas jelas untuk pemasaran properti terpadu
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-4">
+                        <img src="https://imgur.com/o3rxcu0.png" alt="Manager MEA" class="team-avatar rounded-full mx-auto mb-4">
+                        <h3 class="text-lg font-bold mb-2">Manager MEA</h3>
+                        <p class="text-sm text-gray-500 mb-4">(Penanggung Jawab)</p>
+                    </div>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                            <span>Bertanggung jawab penuh atas tim</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                            <span>Pengambil keputusan strategis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                            <span>Mengawasi seluruh operasional</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                            <span>Membangun sistem monitoring</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <span class="text-lg font-bold text-gray-900">Rp8.500.000</span>
+                        <span class="text-sm text-gray-500">/ bulan</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-4">
+                        <img src="https://imgur.com/8m4lIwF.png" alt="Marketing Executive" class="team-avatar rounded-full mx-auto mb-4">
+                        <h3 class="text-lg font-bold mb-2">Marketing Executive</h3>
+                        <p class="text-sm text-gray-500 mb-4">Penjualan & Customer Service</p>
+                    </div>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Menemani buyer & menjelaskan properti</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Canvassing langsung ke lokasi strategis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Berkoordinasi dengan tim properti</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Menjaga event perusahaan</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <span class="text-lg font-bold text-gray-900">Rp2.000.000</span>
+                        <span class="text-sm text-gray-500">/ orang / bulan</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-4">
+                        <img src="https://imgur.com/TzVnTNw.png" alt="Desainer" class="team-avatar rounded-full mx-auto mb-4">
+                        <h3 class="text-lg font-bold mb-2">Desainer & Konten</h3>
+                        <p class="text-sm text-gray-500 mb-4">Produksi Konten Digital</p>
+                    </div>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Membuat desain untuk promosi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Produksi konten video properti</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Mengelola media sosial MEA</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Optimasi konten untuk lead generation</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <span class="text-lg font-bold text-gray-900">Rp3.000.000</span>
+                        <span class="text-sm text-gray-500">/ bulan</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-gray-900 text-white p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-6 text-yellow-400">Rekap Biaya Bulanan</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-300">Manager MEA</span>
+                                <span class="font-medium">Rp8.500.000</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-300">Marketing Executive (5 Orang)</span>
+                                <span class="font-medium">Rp10.000.000</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-300">Desainer & Konten</span>
+                                <span class="font-medium">Rp3.000.000</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-300">Biaya Iklan Digital</span>
+                                <span class="font-medium">Rp8.500.000</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-300">Operasional & Promosi Offline</span>
+                                <span class="font-medium">Rp4.700.000</span>
+                            </div>
+                             <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-300">Training & Pendukung Soft</span>
+                                <span class="font-medium">Rp800.000</span>
+                            </div>
+                            <div class="flex justify-between pt-4">
+                                <span class="text-lg font-bold text-yellow-400">Total Per Bulan</span>
+                                <span class="text-lg font-bold">Rp35.500.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-900">Total Pendanaan 6 Bulan</h3>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-600 font-medium">Progress Pendanaan</span>
+                                <span class="text-gray-600 font-medium">100%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="progress-bar h-2.5 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Biaya Bulanan (Rp35,5jt x 6)</span>
+                                <span class="font-medium">Rp213.000.000</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Perangkat Kerja</span>
+                                <span class="font-medium">Rp40.090.000</span>
+                            </div>
+                            <div class="flex justify-between pt-4">
+                                <span class="text-xl font-bold text-gray-900">TOTAL INVESTASI</span>
+                                <span class="text-xl font-bold">Rp253.900.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Schedule Section -->
+    <section id="schedule" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Jadwal <span class="gold-gradient">Kerja Tim</span></h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                    Pembagian waktu kerja untuk tim marketing dan staf MEA
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover-scale" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-900">Tim Marketing</h3>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-green-500 pl-4 py-2">
+                            <h4 class="font-bold text-lg text-gray-800">Hari Kerja</h4>
+                            <p class="text-gray-600">Rabu - Minggu</p>
+                            <p class="text-sm text-gray-500 mt-2">Libur: Senin & Selasa</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-blue-500 pl-4 py-2">
+                            <h4 class="font-bold text-lg text-gray-800">Jam Kerja</h4>
+                            <p class="text-gray-600">08.00 - 17.00 WIB</p>
+                            <p class="text-sm text-gray-500 mt-2">Kecuali saat ada event khusus</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                            <h4 class="font-bold text-lg text-gray-800">Kegiatan</h4>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Rabu-Jumat: Canvassing langsung</li>
+                                <li>Sabtu: Event & open house</li>
+                                <li>Minggu: Follow-up & administrasi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover-scale" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-900">Staf MEA</h3>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-purple-500 pl-4 py-2">
+                            <h4 class="font-bold text-lg text-gray-800">Hari Kerja</h4>
+                            <p class="text-gray-600">Senin - Jumat</p>
+                            <p class="text-sm text-gray-500 mt-2">Libur: Sabtu & Minggu</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-red-500 pl-4 py-2">
+                            <h4 class="font-bold text-lg text-gray-800">Jam Kerja</h4>
+                            <p class="text-gray-600">08.00 - 17.00 WIB</p>
+                            <p class="text-sm text-gray-500 mt-2">Kecuali saat ada kebutuhan khusus</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-cyan-500 pl-4 py-2">
+                            <h4 class="font-bold text-lg text-gray-800">Kegiatan</h4>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Senin-Kamis: Operasional harian</li>
+                                <li>Jumat: Evaluasi mingguan</li>
+                                <li>Koordinasi dengan PT RMI</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section id="strategy" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Strategi <span class="gold-gradient">Pemasaran</span></h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                    Strategi terpadu untuk pemasaran Kertamulya Residence - Proyek pertama MEA
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-green-500 mb-4">
+                        <i class="fas fa-leaf text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Digital Organik</h3>
+                    <ul class="text-gray-600 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>TikTok Live harian</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Konten short-form (IG Reels, YT Shorts)</span>
+                        </li>            
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Hashtag geo-lokal: #RumahKuningan, #PropertiSyariah</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Copywriting storytelling properti</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Lead generation WhatsApp</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-ad text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Digital Berbayar</h3>
+                    <ul class="text-gray-600 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Anggaran iklan Rp8.500.000/bulan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Google Display Network</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Google Search Ads (berbasis keyword)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Meta Ads (Facebook & Instagram)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Target: 3-5 prospek/harian untuk closing</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-yellow-500 mb-4">
+                        <i class="fas fa-store text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Offline</h3>
+                    <ul class="text-gray-600 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                            <span>Brosur, spanduk, banner, booth, dan leaflet</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                            <span>Aktivasi lokal (event lokasi, open house)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                            <span>Presentasi dengan tablet marketing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                            <span>Survei lokasi & analisis pasar</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                            <span>Didukung oleh PT Rumah Mulia Indonesia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white rounded-xl p-8 md:p-12 shadow-xl hover-scale" data-aos="fade-up">
+                <div class="md:flex items-center">
+                    <div class="md:w-2/3 mb-8 md:mb-0 md:pr-8">
+                        <h3 class="text-2xl font-bold mb-6">Target Penjualan</h3>
+                        <p class="mb-6 text-yellow-100">
+                            Dengan strategi pemasaran terpadu ini, MEA menargetkan penjualan minimal 40 unit properti per bulan dengan nilai rata-rata Rp143.000.000 per unit.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center glass-card">
+                                <div class="text-3xl font-bold">40+</div>
+                                <div class="text-sm">Unit Terjual/Bulan</div>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center glass-card">
+                                <div class="text-3xl font-bold">2.7%</div>
+                                <div class="text-sm">Komisi Bersih/Unit</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 bg-white bg-opacity-20 rounded-lg p-6 glass-card">
+                        <h4 class="font-bold mb-4 text-center">Potensi Komisi</h4>
+                        <div class="text-4xl font-bold text-center mb-2">154.4 <span class="text-3xl">Jt</span></div>
+                        <p class="text-sm text-yellow-200 text-center">Dari 40 unit @Rp143jt (2.7%)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Market Validation Section -->
+<section id="market-validation" class="py-12 md:py-20 px-4 sm:px-6 bg-white">
+    <div class="container mx-auto">
+        <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 text-gray-900">Validasi <span class="gold-gradient">Pasar Kuningan</span></h2>
+            <div class="w-20 h-1 bg-yellow-500 mx-auto mb-6"></div>
+            <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+                Analisis kebutuhan hunian di Kabupaten Kuningan dan positioning unik Kertamulya Residence
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Demand Card -->
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-chart-line text-blue-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900">Demand Hunian</h3>
+                </div>
+                <div class="space-y-4 mb-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Pertumbuhan permintaan</span>
+                        <span class="font-bold text-blue-600">15% per tahun</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Harga rata-rata</span>
+                        <span class="font-bold text-blue-600">Rp120-150jt</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Kebutuhan per tahun</span>
+                        <span class="font-bold text-blue-600">1.000+ unit</span>
+                    </div>
+                </div>
+                <div class="chart-container" style="height: 200px;">
+                    <canvas id="demandChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Profil Konsumen Card -->
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center mb-4">
+                    <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-users text-yellow-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900">Profil Konsumen</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2">Keluarga Muda</h4>
+                        <p class="text-sm text-gray-600">Pasangan usia 25-35 tahun, penghasilan Rp5-8jt/bulan, mencari rumah pertama dengan cicilan terjangkau.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2">Hijrahpreneur</h4>
+                        <p class="text-sm text-gray-600">Pengusaha muda muslim, tertarik konsep syariah, mencari properti sebagai investasi.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2">First Time Buyer</h4>
+                        <p class="text-sm text-gray-600">Pembeli pertama kali, butuh edukasi, lebih percaya rekomendasi daripada iklan.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pembeda MEA Card -->
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-medal text-red-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900">Pembeda MEA</h3>
+                </div>
+                <ul class="space-y-3 text-gray-700 mb-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-yellow-500 mr-2 mt-1"></i>
+                        <span><strong>Sistem Terpadu:</strong> Digital + offline dengan tracking terpusat</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-yellow-500 mr-2 mt-1"></i>
+                        <span><strong>Tim Digital Expert:</strong> Konten profesional & iklan terukur</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-yellow-500 mr-2 mt-1"></i>
+                        <span><strong>Pendekatan Islami:</strong> Konsep syariah, transaksi jelas</span>
+                    </li>
+                </ul>
+                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                    <p class="text-sm text-yellow-800">"60% pembeli di Kuningan lebih memilih rekomendasi dari kenalan daripada iklan konvensional" - Data internal PT RMI</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Finance Projection Section -->
+<section id="finance" class="py-12 md:py-20 px-4 sm:px-6 bg-gray-50">
+    <div class="container mx-auto">
+        <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 text-gray-900">Proyeksi <span class="gold-gradient">Keuangan</span></h2>
+            <div class="w-20 h-1 bg-yellow-500 mx-auto mb-6"></div>
+            <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+                Simulasi keuangan berdasarkan pencapaian target penjualan 40 unit per bulan
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <!-- Breakdown Pendapatan -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-right">
+                <h3 class="text-xl md:text-2xl font-bold mb-6 text-gray-900">Breakdown Pendapatan</h3>
+                <div class="space-y-4 mb-6">
+                    <div class="flex justify-between border-b border-gray-100 pb-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Harga per Unit</h4>
+                            <p class="text-xs text-gray-500">Kertamulya Residence</p>
+                        </div>
+                        <div class="text-lg font-bold">Rp143.000.000</div>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-100 pb-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Target Penjualan</h4>
+                            <p class="text-xs text-gray-500">Per bulan</p>
+                        </div>
+                        <div class="text-lg font-bold">40 Unit</div>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-100 pb-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Komisi 3% (Kotor)</h4>
+                            <p class="text-xs text-gray-500">Total komisi penjualan</p>
+                        </div>
+                        <div class="text-lg font-bold">Rp171.600.000</div>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-100 pb-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Royalti PT RMI (10%)</h4>
+                            <p class="text-xs text-gray-500">Dari total komisi</p>
+                        </div>
+                        <div class="text-lg font-bold">Rp17.160.000</div>
+                    </div>
+                    <div class="flex justify-between pb-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Komisi Bersih MEA (2.7%)</h4>
+                            <p class="text-xs text-gray-500">Setelah royalti</p>
+                        </div>
+                        <div class="text-lg font-bold">Rp154.440.000</div>
+                    </div>
+                </div>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Break-Even Analysis -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-left">
+                <h3 class="text-xl md:text-2xl font-bold mb-6 text-gray-900">Break-Even Analysis</h3>
+                <div class="mb-6">
+                    <div class="flex justify-between mb-2">
+                        <span class="text-sm text-gray-600">Progress BEP</span>
+                        <span class="text-sm font-medium">12 Unit</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 30%"></div>
+                    </div>
+                    <p class="text-xs text-gray-500">Perlu menjual 12 unit untuk menutup biaya operasional bulanan Rp35.5 juta (2.7% komisi bersih per unit = Rp3.861.000)</p>
+                </div>
+                
+                <h4 class="font-bold mb-4 text-gray-800">Proyeksi Berdasarkan Pencapaian Target</h4>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="targetChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-xl p-6 md:p-8 shadow-xl hover-scale max-w-4xl mx-auto" data-aos="fade-up">
+            <h3 class="text-xl md:text-2xl font-bold mb-6">Analisis Risiko & Mitigasi</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-bold mb-3 text-purple-200">Risiko Utama</h4>
+                    <ul class="list-disc list-inside text-purple-100 space-y-2 text-sm">
+                        <li>Target penjualan tidak tercapai</li>
+                        <li>Biaya operasional membengkak</li>
+                        <li>Turnover tim marketing tinggi</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-3 text-purple-200">Strategi Mitigasi</h4>
+                    <ul class="list-disc list-inside text-purple-100 space-y-2 text-sm">
+                        <li>Monitoring harian & evaluasi mingguan</li>
+                        <li>Budget control ketat dengan approval</li>
+                        <li>Sistem bonus menarik & pelatihan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Commission Section - REVISED -->
+<section id="commission" class="py-20 px-6 bg-white">
+    <div class="container mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Skema <span class="gold-gradient">Komisi & Pembagian</span></h2>
+            <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                Distribusi hasil komisi kotor 3% dipotong 10% komisi Royalti PT. RMI (0,3%) = 2,7% bersih
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-md hover-scale mx-auto w-full max-w-md" data-aos="fade-right">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">Pembagian Komisi Per Unit</h3>
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center border-b border-gray-100 pb-4">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Harga Rumah</h4>
+                            <p class="text-sm text-gray-500">Kertamulya Residence</p>
+                        </div>
+                        <div class="text-lg font-bold">Rp143.000.000</div>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-gray-100 pb-4">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Komisi 3% (Kotor)</h4>
+                            <p class="text-sm text-gray-500">Total komisi penjualan</p>
+                        </div>
+                        <div class="text-lg font-bold">Rp4.290.000</div>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-gray-100 pb-4">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Royalti PT RMI (10%)</h4>
+                            <p class="text-sm text-gray-500">Dari total komisi</p>
+                        </div>
+                        <div class="text-lg font-bold">Rp429.000</div>
+                    </div>
+                    <div class="flex justify-between items-center pb-4">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Komisi Bersih MEA (2.7%)</h4>
+                            <p class="text-sm text-gray-500">Setelah royalti</p>
+                        </div>
+                        <div class="text-lg font-bold">Rp3.861.000</div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <div class="chart-container">
+                        <canvas id="commissionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-md hover-scale mx-auto w-full max-w-md" data-aos="fade-left">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">Distribusi Internal MEA Per Unit</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-600">Marketing Executive (1%)</span>
+                            <span class="font-medium">Rp1.430.000</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full" style="width: 37%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-600">Manager MEA (0.4%)</span>
+                            <span class="font-medium">Rp572.000</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-yellow-500 h-2 rounded-full" style="width: 14.8%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-600">Bonus Marketing (0.2%)</span>
+                            <span class="font-medium">Rp286.000</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 7.4%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-600">Pengembangan Bisnis (0.3%)</span>
+                            <span class="font-medium">Rp429.000</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 14.8%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-600">Cadangan OPS (0.2%)</span>
+                            <span class="font-medium">Rp286.000</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-red-500 h-2 rounded-full" style="width: 7.4%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3"> <!-- Tambahkan margin bottom -->
+    <div class="flex justify-between mb-1">
+        <span class="text-gray-600">Dividen MEA & RMI (0.6%)</span>
+        <span class="font-medium">Rp858.000</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-3"> <!-- Tinggi diubah dari h-2 ke h-3 -->
+        <div class="bg-cyan-500 h-3 rounded-full" style="width: 22.2%"></div>
+    </div>
+</div>
+                </div>
+                <div class="mt-8">
+                    <div class="chart-container">
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Monthly Simulation Section -->
+        <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl p-8 md:p-12 shadow-xl hover-scale max-w-4xl mx-auto" data-aos="fade-up">
+            <div class="md:flex items-center">
+                <div class="md:w-2/3 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-6">Simulasi Bulanan (40 Unit)</h3>
+                    <p class="mb-6 text-blue-100">
+                        Berikut simulasi komisi yang didapatkan jika target 40 unit tercapai dalam satu bulan:
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center glass-card">
+                            <div class="text-3xl font-bold">40</div>
+                            <div class="text-sm">Unit Terjual</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center glass-card">
+                            <div class="text-3xl font-bold">171.6 JT</div>
+                            <div class="text-sm">Total Komisi</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/3 bg-white bg-opacity-20 rounded-lg p-6 glass-card">
+                    <h4 class="font-bold mb-4 text-center">Komisi Bersih MEA</h4>
+                    <div class="text-4xl font-bold text-center mb-2">154.4<span class="text-3xl">Jt</span></div>
+                    <p class="text-sm text-blue-200 text-center">Setelah royalti PT RMI</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ROI Section -->
+    <section id="roi" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Pengembalian <span class="gold-gradient">Modal (ROI)</span></h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div data-aos="fade-right">
+                    <div class="bg-white p-8 rounded-xl shadow-md mb-8 hover-scale" style="border-top: 4px solid #d4af37;">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-hand-holding-usd text-2xl text-yellow-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900">Skema Pengembalian Modal</h3>
+                                <p class="text-gray-600">MEA akan mulai mencicil dana investasi mulai bulan ke-7</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-yellow-500 mr-3 mt-1"></i>
+                                <span>PT RMI mendanai MEA selama 6 bulan pertama (Rp35.5jt x 6 = Rp213jt)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-yellow-500 mr-3 mt-1"></i>
+                                <span>Mulai bulan ke-7, MEA mencicil pengembalian modal ke PT RMI</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-yellow-500 mr-3 mt-1"></i>
+                                <span>Target ROI penuh dalam 12 bulan setelah fase operasional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-yellow-500 mr-3 mt-1"></i>
+                                <span>Royalti 10% untuk PT RMI tetap berlaku selama kontrak</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-md hover-scale" data-aos="fade-right" data-aos-delay="100" style="border-top: 4px solid #3b82f6;">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-crown text-2xl text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900">Pembagian Dividen</h3>
+                                <p class="text-gray-600">Setelah ROI terpenuhi</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mr-3 mt-1"></i>
+                                <span>PT RMI mendapatkan 40% dari dividen tahunan</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mr-3 mt-1"></i>
+                                <span>MEA mendapatkan 60% dari dividen tahunan</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mr-3 mt-1"></i>
+                                <span>Distribusi dividen MEA: Komisaris (15%), Direktur Utama (15%), Manager MEA (30%)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="bg-white p-8 rounded-xl shadow-md mb-8 hover-scale" style="border-top: 4px solid #10b981;">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-chart-line text-2xl text-green-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900">Rencana Ekspansi Tahun ke-2</h3>
+                                <p class="text-gray-600">Kerja sama dengan developer eksternal</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                                <span>MEA membuka kerja sama dengan proyek developer eksternal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                                <span>Komisi tetap 3% (bersih) untuk MEA</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                                <span>MEA memberikan <span class="font-bold">10% royalti</span> ke PT Rumah Mulia Indonesia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                                <span>Potensi pendapatan tambahan yang signifikan</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-800 p-8 rounded-xl shadow-lg text-white hover-scale">
+                        <h3 class="text-xl font-bold mb-4">Timeline Proyeksi</h3>
+                        <div class="relative pl-10">
+                            <div class="absolute left-0 top-0 h-full w-0.5 bg-white bg-opacity-30"></div>
+                            
+                            <div class="relative mb-8 timeline-item">
+                                <div class="text-sm text-blue-200 mb-1">Bulan 1-6</div>
+                                <h4 class="text-lg font-bold mb-2">Operasional Awal</h4>
+                                <p class="text-blue-100">Fase pembentukan tim, sistem, dan pemasaran awal. Fokus pada penjualan Kertamulya Residence.</p>
+                            </div>
+                            
+                            <div class="relative mb-8 timeline-item">
+                                <div class="text-sm text-blue-200 mb-1">Bulan 7-18</div>
+                                <h4 class="text-lg font-bold mb-2">Pengembalian Modal</h4>
+                                <p class="text-blue-100">Mulai cicilan pengembalian modal dengan skema yang telah disepakati. Pemberian royalti 10% untuk PT Rumah Mulia Indonesia.</p>
+                            </div>
+                            
+                            <div class="relative timeline-item">
+                                <div class="text-sm text-blue-200 mb-1">Bulan 19+</div>
+                                <h4 class="text-lg font-bold mb-2">Ekspansi Bisnis</h4>
+                                <p class="text-blue-100">Kerja sama dengan developer eksternal dengan komisi 3% untuk MEA dan royalti 10% untuk PT Rumah Mulia Indonesia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden" data-aos="fade-up">
+                <div class="md:flex">
+                    <div class="md:w-1/3 bg-yellow-500 text-gray-900 p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-6">Keuntungan</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-3 mt-1"></i>
+                                <span>Sistem pemasaran terpadu dan profesional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-3 mt-1"></i>
+                                <span>Tim yang solid dengan pembagian tugas jelas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-3 mt-1"></i>
+                                <span>Dukungan penuh dari PT Rumah Mulia Indonesia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-3 mt-1"></i>
+                                <span>Potensi ekspansi ke proyek developer eksternal</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/3 bg-blue-600 text-white p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-6">Tantangan</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle mr-3 mt-1"></i>
+                                <span>Membentuk tim yang solid di awal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle mr-3 mt-1"></i>
+                                <span>Konsistensi dalam pemasaran</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle mr-3 mt-1"></i>
+                                <span>Target penjualan yang ambisius</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle mr-3 mt-1"></i>
+                                <span>Persaingan di pasar properti</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/3 bg-gray-900 text-white p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-6">Solusi</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-lightbulb text-yellow-400 mr-3 mt-1"></i>
+                                <span>Rekrutmen ketat dengan sistem gaji yang kompetitif</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-lightbulb text-yellow-400 mr-3 mt-1"></i>
+                                <span>Monitoring kinerja harian/mingguan</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-lightbulb text-yellow-400 mr-3 mt-1"></i>
+                                <span>Strategi pemasaran multi-channel</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-lightbulb text-yellow-400 mr-3 mt-1"></i>
+                                <span>Pelatihan berkelanjutan untuk tim</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Hardware Section - UPDATED -->
+<section id="hardware" class="py-20 px-6 bg-white">
+    <div class="container mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Perangkat <span class="gold-gradient">Kerja Modern MEA</span></h2>
+            <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                Perangkat canggih untuk mendukung operasional tim pemasaran properti digital
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Laptop Organik Lead -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center mb-4">
+                    <img src="https://imgur.com/lp9G5Ij.jpg" alt="Laptop Organik Lead" class="w-full h-48 object-contain mb-4 zoomable-image">
+                    <h3 class="text-lg font-bold mb-2">Lenovo Thinkpad P53</h3>
+                    <p class="text-sm text-gray-500 mb-4">i7-9850H, RAM 32GB, SSD 512GB</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Untuk:</span>
+                    <span class="font-medium">Lead Generation</span>
+                </div>
+                <div class="text-center mt-4">
+                    <span class="text-lg font-bold text-gray-900">Rp9.800.000</span>
+                </div>
+            </div>
+            
+            <!-- Laptop Desain -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-center mb-4">
+                    <img src="https://imgur.com/lp9G5Ij.jpg" alt="Laptop Desain" class="w-full h-48 object-contain mb-4 zoomable-image">
+                    <h3 class="text-lg font-bold mb-2">Lenovo Thinkpad P52</h3>
+                    <p class="text-sm text-gray-500 mb-4">i7-9850H, RAM 32GB</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Untuk:</span>
+                    <span class="font-medium">Desain & Konten</span>
+                </div>
+                <div class="text-center mt-4">
+                    <span class="text-lg font-bold text-gray-900">Rp7.400.000</span>
+                </div>
+            </div>
+            
+            <!-- Tablet Xiaomi -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-center mb-4">
+                    <img src="https://i.imgur.com/xMTeTJU.jpg" alt="Tablet Xiaomi" class="w-full h-48 object-contain mb-4 zoomable-image">
+                    <h3 class="text-lg font-bold mb-2">Xiaomi Pad 6</h3>
+                    <p class="text-sm text-gray-500 mb-4">8GB/258GB + Stylus Pen</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Untuk:</span>
+                    <span class="font-medium">Presentasi Inhouse</span>
+                </div>
+                <div class="text-center mt-4">
+                    <span class="text-lg font-bold text-gray-900">Rp5.500.000</span>
+                </div>
+            </div>
+            
+            <!-- HP Xiaomi -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-center mb-4">
+                    <img src="https://imgur.com/duWQ0tP.jpg" alt="HP Xiaomi" class="w-full h-48 object-contain mb-4 zoomable-image">
+                    <h3 class="text-lg font-bold mb-2">Xiaomi 14T Pro</h3>
+                    <p class="text-sm text-gray-500 mb-4">12GB/256GB</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Untuk:</span>
+                    <span class="font-medium">CS - IG - TikTok</span>
+                </div>
+                <div class="text-center mt-4">
+                    <span class="text-lg font-bold text-gray-900">Rp7.000.000</span>
+                </div>
+            </div>
+            
+            <!-- Wireless Mic -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="500">
+                <div class="text-center mb-4">
+                    <img src="https://i.imgur.com/V65FtDy.jpg" alt="Wireless Mic" class="w-full h-48 object-contain mb-4 zoomable-image">
+                    <h3 class="text-lg font-bold mb-2">Hollyland Lark M2</h3>
+                    <p class="text-sm text-gray-500 mb-4">Wireless Mic Kamera/HP/Mixer</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Untuk:</span>
+                    <span class="font-medium">Konten Video</span>
+                </div>
+                <div class="text-center mt-4">
+                    <span class="text-lg font-bold text-gray-900">Rp2.200.000</span>
+                </div>
+            </div>
+            
+            <!-- Monitor -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="600">
+                <div class="text-center mb-4">
+                    <img src="https://i.imgur.com/AcU3F4t.jpg" alt="Monitor" class="w-full h-48 object-contain mb-4 zoomable-image">
+                    <h3 class="text-lg font-bold mb-2">LG 24U421A 24</h3>
+                    <p class="text-sm text-gray-500 mb-4">VA 100Hz Curved HDMI USB-C</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Untuk:</span>
+                    <span class="font-medium">Produktivitas Tim</span>
+                </div>
+                <div class="text-center mt-4">
+                    <span class="text-lg font-bold text-gray-900">Rp1.600.000</span>
+                </div>
+            </div>
+            
+            <!-- Keyboard Mouse -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="700">
+                <div class="text-center mb-4">
+                    <img src="https://i.imgur.com/IhxZBtq.jpg" alt="Keyboard Mouse" class="w-full h-48 object-contain mb-4 zoomable-image">
+                    <h3 class="text-lg font-bold mb-2">Logitech MK345</h3>
+                    <p class="text-sm text-gray-500 mb-4">Wireless Keyboard Mouse Set</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Untuk:</span>
+                    <span class="font-medium">Kenyamanan Kerja</span>
+                </div>
+                <div class="text-center mt-4">
+                    <span class="text-lg font-bold text-gray-900">Rp450.000</span>
+                </div>
+            </div>
+            
+            <!-- Bracket Monitor -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="800">
+                <div class="text-center mb-4">
+                    <img src="https://i.imgur.com/o235SWp.jpg" alt="Bracket Monitor" class="w-full h-48 object-contain mb-4 zoomable-image">
+                    <h3 class="text-lg font-bold mb-2">Bracket Monitor</h3>
+                    <p class="text-sm text-gray-500 mb-4">Double Arm NBF160 + Tray Laptop</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Untuk:</span>
+                    <span class="font-medium">Ergonomi Kerja</span>
+                </div>
+                <div class="text-center mt-4">
+                    <span class="text-lg font-bold text-gray-900">Rp790.000</span>
+                </div>
+            </div>
+            
+            <!-- Meja & Kursi -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="900">
+                <div class="text-center mb-4">
+                    <img src="https://i.imgur.com/bJ76rOy.jpg" alt="Meja & Kursi" class="w-full h-48 object-contain mb-4 zoomable-image">
+                    <h3 class="text-lg font-bold mb-2">Meja & Kursi Kerja</h3>
+                    <p class="text-sm text-gray-500 mb-4">2 Set Ergonomis</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Untuk:</span>
+                    <span class="font-medium">Workstation Tim</span>
+                </div>
+                <div class="text-center mt-4">
+                    <span class="text-lg font-bold text-gray-900">Rp3.000.000</span>
+                </div>
+            </div>
+            
+            <!-- Domain & Hosting -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="1000">
+                <div class="text-center mb-4">
+                    <img src="https://i.imgur.com/2tKOkFX.jpg" alt="Domain & Hosting" class="w-full h-48 object-contain mb-4 zoomable-image">
+                    <h3 class="text-lg font-bold mb-2">Domain & Hosting</h3>
+                    <p class="text-sm text-gray-500 mb-4">Bimulialand.com/.id (Domainesia)</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Untuk:</span>
+                    <span class="font-medium">Online Presence</span>
+                </div>
+                <div class="text-center mt-4">
+                    <span class="text-lg font-bold text-gray-900">Rp1.000.000</span>
+                </div>
+            </div>
+            
+            <!-- Pendukung Organik -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="1100">
+                <div class="text-center mb-4">
+                    <img src="https://i.imgur.com/xhlC2QK.jpg" alt="Pendukung Organik" class="w-full h-48 object-contain mb-4 zoomable-image">
+                    <h3 class="text-lg font-bold mb-2">Pendukung Organik</h3>
+                    <p class="text-sm text-gray-500 mb-4">HP Aktivator, Kartu Axis, Akun FB</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Untuk:</span>
+                    <span class="font-medium">Lead Generation</span>
+                </div>
+                <div class="text-center mt-4">
+                    <span class="text-lg font-bold text-gray-900">Rp1.700.000</span>
+                </div>
+            </div>
+<!-- Ring Light & Tripod -->
+            <div class="bg-white p-6 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="1100">
+                <div class="text-center mb-4">
+                    <img src="https://imgur.com/g7Kpy6t.png" alt="Ring Light & Tripod" class="w-full h-48 object-contain mb-4 zoomable-image">
+                    <h3 class="text-lg font-bold mb-2">Ring Light & Tripod</h3>
+                    <p class="text-sm text-gray-500 mb-4">Untuk produksi konten video</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Untuk:</span>
+                    <span class="font-medium">Tool Live Konten</span>
+                </div>
+                <div class="text-center mt-4">
+                    <span class="text-lg font-bold text-gray-900">Rp1.500.000</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white rounded-xl p-6 md:p-8 shadow-xl hover-scale" data-aos="fade-up">
+            <div class="md:flex items-center">
+                <div class="md:w-2/3 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-6">Total Investasi Hardware</h3>
+                    <p class="mb-6 text-indigo-100">
+                        PT Rumah Mulia Indonesia menyediakan perangkat kerja lengkap untuk mendukung operasional MEA selama 6 bulan pertama.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center glass-card">
+                            <div class="text-3xl font-bold">11</div>
+                            <div class="text-sm">Jenis Perangkat</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center glass-card">
+                            <div class="text-3xl font-bold">36.640 Jt</div>
+                            <div class="text-sm">Total Nilai</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/3 bg-white bg-opacity-20 rounded-lg p-4 md:p-6 glass-card">
+                    <h4 class="font-bold mb-4 text-center">Modal Awal</h4>
+                    <div class="text-3xl md:text-4xl font-bold text-center mb-2">36.640 <span class="text-2xl md:text-3xl">Jt</span></div>
+                    <p class="text-sm text-indigo-200 text-center">Untuk perangkat kerja tim</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Software Support Section -->
+        <div class="mt-12 bg-gray-50 p-6 md:p-8 rounded-xl shadow-md hover-scale" data-aos="fade-up">
+            <h3 class="text-2xl font-bold mb-6 text-gray-900">Aplikasi Pendukung (Masa Aktif 1 Tahun)</h3>
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg border-l-4 border-blue-500">
+                    <div class="flex items-center mb-3">
+                        <img src="https://i.imgur.com/zFv8p8j.png" alt="Facebook Domination" class="h-10 w-10 mr-3">
+                        <h4 class="font-bold">Facebook Domination</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-2">Untuk manajemen akun Facebook</p>
+                    <div class="text-lg font-bold text-blue-600">Rp1.000.000</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg border-l-4 border-purple-500">
+                    <div class="flex items-center mb-3">
+                        <img src="https://i.imgur.com/tsL2eA5.jpg" alt="OLX Domination" class="h-10 w-10 mr-3">
+                        <h4 class="font-bold">OLX Domination</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-2">Untuk manajemen iklan OLX</p>
+                    <div class="text-lg font-bold text-purple-600">Rp500.000</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg border-l-4 border-green-500">
+                    <div class="flex items-center mb-3">
+                        <img src="https://i.imgur.com/2TTvKLX.png" alt="Wabutton" class="h-10 w-10 mr-3">
+                        <h4 class="font-bold">WA Blast Button</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-2">Broadcast Promosi WhatsApp</p>
+                    <div class="text-lg font-bold text-green-600">Rp750.000</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg border-l-4 border-pink-500">
+                    <div class="flex items-center mb-3">
+                        <img src="https://i.imgur.com/VnWF1lt.jpg" alt="TikTok Domination" class="h-10 w-10 mr-3">
+                        <h4 class="font-bold">TikTok Domination</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-2">Untuk manajemen akun TikTok</p>
+                    <div class="text-lg font-bold text-pink-600">Rp400.000</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg border-l-4 border-red-500">
+                    <div class="flex items-center mb-3">
+                        <img src="https://i.imgur.com/XlFzyDs.jpg" alt="Gmap Scraper" class="h-10 w-10 mr-3">
+                        <h4 class="font-bold">GMap Scraper</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-2">Collection data Gmap Bisnis</p>
+                    <div class="text-lg font-bold text-red-600">Rp500.000</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg border-l-4 border-yellow-500">
+                    <div class="flex items-center mb-3">
+                        <img src="https://i.imgur.com/MdhXeW5.png" alt="Canva" class="h-10 w-10 mr-3">
+                        <h4 class="font-bold">Canva Pro</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-2">Untuk desain grafis premium</p>
+                    <div class="text-lg font-bold text-yellow-600">Rp300.000</div>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-green-600 to-green-800 text-white rounded-xl p-6 md:p-8 shadow-xl hover-scale">
+                <div class="md:flex items-center">
+                    <div class="md:w-2/3 mb-8 md:mb-0 md:pr-8">
+                        <h3 class="text-2xl font-bold mb-6">Total Investasi Software</h3>
+                        <p class="mb-6 text-green-100">
+                            Aplikasi pendukung dengan masa aktif 1 tahun untuk operasional digital marketing.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center glass-card">
+                                <div class="text-3xl font-bold">6</div>
+                                <div class="text-sm">Jenis Software</div>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center glass-card">
+                                <div class="text-3xl font-bold">3.450 Jt</div>
+                                <div class="text-sm">Total Nilai</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 bg-white bg-opacity-20 rounded-lg p-4 md:p-6 glass-card">
+                        <h4 class="font-bold mb-4 text-center">Total Keseluruhan</h4>
+                        <div class="text-3xl md:text-4xl font-bold text-center mb-2">40.090 <span class="text-2xl md:text-3xl">Jt</span></div>
+                        <p class="text-sm text-green-200 text-center">Hardware + Software</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Recruitment Section -->
+    <section id="recruitment" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Rekrutmen <span class="gold-gradient">Tim MEA</span></h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                    Proses rekrutmen independen oleh MEA untuk membentuk tim profesional pemasaran properti di Kuningan, Jawa Barat
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Marketing Executive -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <div class="bg-blue-100 p-4 rounded-full inline-block">
+                            <i class="fas fa-user-tie text-blue-500 text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center text-gray-900">Marketing Executive</h3>
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Kualifikasi:</h4>
+                        <ul class="list-disc list-inside text-gray-600 text-sm">
+                            <li>Pendidikan minimal SMA/STM sederajat</li>
+                            <li>Memiliki SIM C aktif</li>
+                            <li>Pengalaman marketing/penjualan</li>
+                            <li>Percaya diri membuat konten video</li>
+                            <li>Menguasai TikTok/Instagram Reels</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Tanggung Jawab:</h4>
+                        <ul class="list-disc list-inside text-gray-600 text-sm">
+                            <li>Canvassing langsung ke lokasi strategis</li>
+                            <li>Membuat konten video properti harian</li>
+                            <li>Melakukan live TikTok minimal 3x/minggu</li>
+                            <li>Follow-up prospek harian</li>
+                            <li>Menemani buyer survei lokasi</li>
+                        </ul>
+                    </div>
+                    <div class="text-center mt-6">
+                        <span class="text-lg font-bold text-gray-900">Rp2.000.000</span>
+                        <span class="text-sm text-gray-500">+ Bonus Penjualan</span>
+                    </div>
+                </div>
+                
+                <!-- Desainer -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover-scale" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="bg-purple-100 p-4 rounded-full inline-block">
+                            <i class="fas fa-paint-brush text-purple-500 text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center text-gray-900">Desainer & Konten</h3>
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Kualifikasi:</h4>
+                        <ul class="list-disc list-inside text-gray-600 text-sm">
+                            <li>Mahir desain digital & cetak (feed, banner, brosur)</li>
+                            <li>Bisa edit video (CapCut, VN)</li>
+                            <li>Portofolio wajib</li>
+                            <li>Kreatif & deadline-minded</li>
+                            <li>Familiar dengan tone visual Bandung (lokalitas)</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Tanggung Jawab:</h4>
+                        <ul class="list-disc list-inside text-gray-600 text-sm">
+                            <li>Membuat desain untuk promosi offline & digital</li>
+                            <li>Produksi konten video properti</li>
+                            <li>Mengelola media sosial MEA</li>
+                            <li>Optimasi konten untuk lead generation</li>
+                        </ul>
+                    </div>
+                    <div class="text-center mt-6">
+                        <span class="text-lg font-bold text-gray-900">Rp3.000.000</span>
+                        <span class="text-sm text-gray-500">+ Bonus Performa</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recruitment Process Section -->
+            <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl p-8 md:p-12 shadow-xl hover-scale" data-aos="fade-up">
+                <h3 class="text-2xl font-bold mb-6">Proses Rekrutmen Independen</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-file-alt text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">1. Seleksi Administrasi</h4>
+                        <p class="text-blue-100 text-sm">Verifikasi dokumen & kualifikasi oleh MEA</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-video text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">2. Tes Praktik</h4>
+                        <p class="text-blue-100 text-sm">Buat konten video/iklan contoh</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">3. Wawancara</h4>
+                        <p class="text-blue-100 text-sm">Dengan Manager MEA</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-file-signature text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">4. Kontrak Kerja</h4>
+                        <p class="text-blue-100 text-sm">Dibawah PT Rumah Mulia Indonesia</p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-blue-500 text-center">
+                   <p class="text-blue-200">Proses rekrutmen staf MEA melalui tahap screening awal oleh PT Rumah Mulia Indonesia untuk memastikan standar HR RMI terpenuhi, dengan keputusan final penempatan tetap berada di bawah kewenangan MEA sebagai user..</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Contract Section - REVISED -->
+<section id="contract" class="py-20 px-6 bg-gray-50">
+    <div class="container mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Legalitas Resmi <span class="gold-gradient">MEA - RMI</span></h2>
+            <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                Dokumen legal pendirian Mulia Estate Agency sebagai unit bisnis dibawah PT Rumah Mulia Indonesia
+            </p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-2xl overflow-hidden" data-aos="fade-up">
+            <div class="md:flex">
+                <!-- Legal Structure -->
+                <div class="md:w-1/2 bg-gradient-to-b from-blue-900 to-blue-800 text-white p-8 md:p-12">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                            <i class="fas fa-landmark text-2xl text-yellow-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-yellow-400">Struktur Kepemilikan</h3>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <!-- Komisaris -->
+                        <div class="bg-white bg-opacity-10 p-6 rounded-lg glass-card">
+                            <div class="flex items-start">
+                                <div class="bg-yellow-400 text-blue-900 p-2 rounded-full mr-4">
+                                    <i class="fas fa-crown text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Komisaris Utama</h4>
+                                    <p class="text-blue-200">Rohmatuloh</p>
+                                    <p class="text-sm text-blue-300 mt-2">Pengawas MEA</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Direktur Utama -->
+                        <div class="bg-white bg-opacity-10 p-6 rounded-lg glass-card">
+                            <div class="flex items-start">
+                                <div class="bg-yellow-400 text-blue-900 p-2 rounded-full mr-4">
+                                    <i class="fas fa-chess-queen text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Direktur Utama</h4>
+                                    <p class="text-blue-200">Eka Ahmad Fauzi</p>
+                                    <p class="text-sm text-blue-300 mt-2">Penanggung Jawab Operasional MEA</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Manager MEA -->
+                        <div class="bg-white bg-opacity-10 p-6 rounded-lg glass-card">
+                            <div class="flex items-start">
+                                <div class="bg-yellow-400 text-blue-900 p-2 rounded-full mr-4">
+                                    <i class="fas fa-user-tie text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Manager MEA</h4>
+                                    <p class="text-blue-200">Taufik Mansur Marie</p>
+                                    <p class="text-sm text-blue-300 mt-2">Penanggung Jawab Harian Operasional MEA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Legal Details -->
+                <div class="md:w-1/2 p-8 md:p-12">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-file-contract text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Dokumen Pendirian</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- Legal Status -->
+                        <div class="border-l-4 border-blue-500 pl-4 py-2">
+                            <h4 class="font-bold text-lg text-gray-800 mb-3">Status Hukum</h4>
+                            <p class="text-gray-700 mb-3">Mulia Estate Agency merupakan unit bisnis resmi dibawah PT Rumah Mulia Indonesia berdasarkan:</p>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="flex items-start">
+                                    <i class="fas fa-file-alt text-blue-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <p class="font-medium">Akta Pendirian Unit Bisnis</p>
+                                        <p class="text-sm text-gray-600">No. 12/AKU/III/2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Poin-Poin Legal -->
+                        <div class="border-l-4 border-green-500 pl-4 py-2">
+                            <h4 class="font-bold text-lg text-gray-800 mb-3">Ketentuan Utama</h4>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                                <li>MEA beroperasi sebagai <span class="font-semibold">unit bisnis mandiri</span> dibawah PT RMI</li>
+                                <li>PT RMI menyediakan pendanaan awal dan infrastruktur</li>
+                                <li>MEA membayar royalti 10% dari komisi penjualan</li>
+                                <li>Pembagian dividen sesuai kepemilikan saham</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Dokumen Legal -->
+                        <div class="border-l-4 border-purple-500 pl-4 py-2">
+                            <h4 class="font-bold text-lg text-gray-800 mb-3">Dokumen Resmi</h4>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-file-pdf text-red-500 text-xl mr-3"></i>
+                                    <div>
+                                        <p class="font-medium">Notaris: Andre Abdul Karim, SH.</p>
+                                        <p class="text-sm text-gray-600">Kantor Notaris Kuningan, Jawa Barat</p>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-3">Dokumen lengkap telah disahkan oleh notaris:</p>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition flex items-center">
+                                        <i class="fas fa-file-download mr-2"></i> Akte Pendirian
+                                    </a>
+                                    <a href="#" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg font-medium hover:bg-gray-300 transition flex items-center">
+                                        <i class="fas fa-file-signature mr-2"></i> Surat Keputusan
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Legal Provisions -->
+            <div class="border-t border-gray-200 p-8 bg-gray-50">
+                <h3 class="text-xl font-bold mb-6 text-center text-gray-900">Ketentuan Hukum</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-lg mb-4 text-blue-700">Hak MEA</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Menggunakan brand dan fasilitas PT RMI</li>
+                            <li>Mengelola operasional secara mandiri</li>
+                            <li>Menerima pembagian dividen sesuai porsi</li>
+                            <li>Mengembangkan bisnis sesuai visi perusahaan</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-lg mb-4 text-blue-700">Kewajiban MEA</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Membayar royalti 10% dari komisi penjualan</li>
+                            <li>Melaporkan perkembangan bulanan ke PT RMI</li>
+                            <li>Mematuhi SOP dan standar kualitas PT RMI</li>
+                            <li>Menjaga reputasi brand PT RMI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legal Documents -->
+        <div class="mt-12 bg-gradient-to-r from-blue-800 to-blue-900 text-white rounded-xl p-8 shadow-2xl hover-scale" data-aos="fade-up">
+            <div class="md:flex items-center">
+                <div class="md:w-2/3 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-6">Dokumen Legal Profesional</h3>
+                    <p class="mb-6 text-blue-100">
+                        Berikut contoh dokumen legal notaris yang mengikat secara hukum antara MEA dan PT RMI:
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center glass-card">
+                            <div class="text-3xl font-bold">15</div>
+                            <div class="text-sm">Pasal</div>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center glass-card">
+                            <div class="text-3xl font-bold">5</div>
+                            <div class="text-sm">Lampiran</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/3 bg-white bg-opacity-20 rounded-lg p-6 glass-card">
+                    <h4 class="font-bold mb-4 text-center">Contoh Dokumen</h4>
+                    <div class="text-center mb-4">
+                        <img src="https://i.imgur.com/2tKOkFX.png" alt="Contoh Dokumen" class="w-24 h-32 object-cover mx-auto border-2 border-white">
+                    </div>
+                    <a href="#" class="block text-center text-blue-200 hover:text-white text-sm underline">Preview Halaman Pertama</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sample Legal Document -->
+        <div class="mt-12 bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+            <div class="p-8">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">Kutipan Akta Pendirian (Contoh)</h3>
+                
+                <div class="border border-gray-200 rounded-lg p-6 bg-gray-50">
+                    <div class="text-center mb-6">
+                        <h4 class="font-bold text-lg text-blue-800">AKTA PENDIRIAN UNIT BISNIS</h4>
+                        <p class="text-sm text-gray-600">Nomor: 12/AKU/III/2025</p>
+                    </div>
+                    
+                    <div class="space-y-4 text-sm text-gray-700">
+                        <p class="text-justify"><strong>PASAL 1 - NAMA DAN STATUS</strong><br>
+                        Mulia Estate Agency (MEA) merupakan unit bisnis dibawah PT Rumah Mulia Indonesia yang berkedudukan di Kuningan, Jawa Barat.</p>
+                        
+                        <p class="text-justify"><strong>PASAL 2 - TUJUAN PENDIRIAN</strong><br>
+                        MEA didirikan untuk melaksanakan kegiatan pemasaran properti secara profesional dengan sistem terpadu dibawah naungan PT Rumah Mulia Indonesia.</p>
+                        
+                        <p class="text-justify"><strong>PASAL 3 - MODAL DAN KEPEMILIKAN</strong><br>
+                        PT Rumah Mulia Indonesia menyediakan modal awal sebesar Rp259.090.000 (dua ratus lima puluh sembilan juta sembilan puluh ribu rupiah) untuk operasional 6 bulan pertama.</p>
+                        
+                        <p class="text-justify"><strong>PASAL 4 - HAK DAN KEWAJIBAN</strong><br>
+                        MEA berhak menggunakan brand dan fasilitas PT RMI dengan kewajiban membayar royalti sebesar 10% dari komisi penjualan.</p>
+                        
+                        <p class="text-justify"><strong>PASAL 5 - MASA BERLAKU</strong><br>
+                        Unit bisnis ini berlaku sejak ditandatangani sampai dengan dicabutnya status sebagai unit bisnis PT Rumah Mulia Indonesia.</p>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <div class="text-center mb-6 md:mb-0">
+                                <p class="font-bold text-gray-800">PT Rumah Mulia Indonesia</p>
+                                <div class="h-16"></div>
+                                <p class="text-sm text-gray-600">Lia Nurmalasari<br>Direktur Utama</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="font-bold text-gray-800">Mulia Estate Agency</p>
+                                <div class="h-16"></div>
+                                <p class="text-sm text-gray-600">Taufik Mansur Marie<br>Manager MEA</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 text-center">
+                        <p class="text-xs text-gray-500">Dokumen ini telah disahkan oleh Notaris Andre Abdul Karim, SH. pada tanggal 15 Maret 2025</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-center">
+    <a href="Kontrak_MEA_RMI.pdf" download class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition mr-4">
+        <i class="fas fa-file-download mr-2"></i> Download Kontrak (PDF)
+    </a>
+    <a href="lampiran_MEA_RMI.pdf" target="_blank" class="inline-block px-6 py-3 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition">
+        <i class="fas fa-file-alt mr-2"></i> Lihat Lampiran (PDF)
+    </a>
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KPI System Section - REVISI LENGKAP -->
+<section id="kpi-system" class="py-20 px-6 bg-white">
+    <div class="container mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Sistem KPI <span class="gold-gradient">Tim MEA</span></h2>
+            <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                Struktur tim terpadu dengan metrik kinerja terukur dan alur konversi realistis
+            </p>
+        </div>
+
+        <!-- Struktur Tim REVISI -->
+        <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-8 shadow-lg mb-12 hover-scale" data-aos="fade-up">
+            <h3 class="text-2xl font-bold mb-6 text-center text-gray-900">Struktur Tim & Pembagian Tugas</h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- CS Admin -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-pink-100 p-3 rounded-full mr-3">
+                            <i class="fas fa-headset text-pink-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-800">CS Admin (1 Orang)</h4>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li><strong>Handle semua leads</strong> (online & offline)</li>
+                        <li>Fast response ≤5 menit</li>
+                        <li>Kualifikasi prospek & jadwalkan survei</li>
+                        <li>Input data ke Google Sheets real-time</li>
+                        <li><strong>Target:</strong> 1.100 leads WA/bulan (20/hari)</li>
+                    </ul>
+                </div>
+                
+                <!-- In-House -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-100 p-3 rounded-full mr-3">
+                            <i class="fas fa-female text-purple-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-800">In-House (2 Orang)</h4>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li><strong>Pendampingan buyer</strong> di kantor</li>
+                        <li>Presentasi properti & follow-up sampai closing</li>
+                        <li>Produksi Konten</li>
+                        <li>Input data ke Google Sheets real-time</li>
+                        <li><strong>Target Closing Gabungan:</strong> 55 closing/bulan</li>
+                                                                    </ul>
+                </div>
+                
+                <!-- Lapangan -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-3">
+                            <i class="fas fa-male text-blue-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-800">Lapangan (2 Orang)</h4>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li><strong>Canvassing langsung</strong> ke lokasi strategis</li>
+                        <li>12 kunjungan efektif/hari</li>
+                        <li>Dokumentasi lengkap + foto lokasi</li>
+                        <li>Bantu follow-up prospek yang gagal</li>
+                        <li>Input data ke Google Sheets real-time</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alur Konversi REVISI LENGKAP -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-12" data-aos="fade-up">
+            <div class="p-8">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">Alur Konversi Realistis</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Online Funnel -->
+                    <div>
+                        <h4 class="text-xl font-bold mb-4 text-purple-600">Leads Digital (40%)</h4>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                                    <span class="font-medium">Leads Digital</span>
+                                    <span class="font-bold">500</span>
+                                </div>
+                                <div class="text-center text-purple-500">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                    <span class="ml-2 text-sm">25% konversi</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                                    <span class="font-medium">Prospek WA</span>
+                                    <span class="font-bold">125</span>
+                                </div>
+                                <div class="text-center text-purple-500">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                    <span class="ml-2 text-sm">40% konversi</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                                    <span class="font-medium">Survey Lokasi</span>
+                                    <span class="font-bold">50</span>
+                                </div>
+                                <div class="text-center text-purple-500">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                    <span class="ml-2 text-sm">70% konversi</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                                    <span class="font-medium">Booking Fee</span>
+                                    <span class="font-bold">35</span>
+                                </div>
+                                <div class="text-center text-purple-500">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                    <span class="ml-2 text-sm">70% konversi</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-purple-100 p-3 rounded-lg font-bold">
+                                    <span class="text-purple-800">Closing</span>
+                                    <span class="text-purple-800">25 Unit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Offline Funnel -->
+                    <div>
+                        <h4 class="text-xl font-bold mb-4 text-blue-600">Leads Offline (60%)</h4>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                                    <span class="font-medium">Kunjungan Langsung</span>
+                                    <span class="font-bold">600</span>
+                                </div>
+                                <div class="text-center text-blue-500">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                    <span class="ml-2 text-sm">30% efektif</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                                    <span class="font-medium">Leads Berkualitas</span>
+                                    <span class="font-bold">180</span>
+                                </div>
+                                <div class="text-center text-blue-500">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                    <span class="ml-2 text-sm">50% konversi</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                                    <span class="font-medium">Survey Lokasi</span>
+                                    <span class="font-bold">90</span>
+                                </div>
+                                <div class="text-center text-blue-500">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                    <span class="ml-2 text-sm">60% konversi</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                                    <span class="font-medium">Booking Fee</span>
+                                    <span class="font-bold">54</span>
+                                </div>
+                                <div class="text-center text-blue-500">
+                                    <i class="fas fa-arrow-down text-xl"></i>
+                                    <span class="ml-2 text-sm">55% konversi</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-blue-100 p-3 rounded-lg font-bold">
+                                    <span class="text-blue-800">Closing</span>
+                                    <span class="text-blue-800">30 Unit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                    <p class="text-green-800 font-medium">Total Closing: 25 (digital) + 30 (offline) = <span class="font-bold">55 unit/bulan</span></p>
+                </div>
+            </div>
+        </div>
+
+      <!-- KPI Components REVISI LENGKAP -->
+<div class="grid md:grid-cols-3 gap-6 mb-12">
+    <!-- CS Admin -->
+    <div class="bg-white p-6 rounded-xl shadow-lg hover-scale" data-aos="fade-up">
+        <div class="flex items-center mb-4">
+            <div class="bg-pink-100 p-3 rounded-full mr-3">
+                <i class="fas fa-headset text-pink-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">KPI CS Admin (100%)</h3>
+        </div>
+        
+        <div class="space-y-4">
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Kehadiran</span>
+                    <span class="font-bold text-pink-600">35%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-pink-500 h-3 rounded-full" style="width: 35%"></div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Response Time ≤5m</span>
+                    <span class="font-bold text-pink-600">20%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-pink-500 h-3 rounded-full" style="width: 20%"></div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Prospek Berkualitas</span>
+                    <span class="font-bold text-pink-600">25%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-pink-500 h-3 rounded-full" style="width: 25%"></div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Laporan Harian</span>
+                    <span class="font-bold text-pink-600">20%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-pink-500 h-3 rounded-full" style="width: 20%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- In-House -->
+    <div class="bg-white p-6 rounded-xl shadow-lg hover-scale" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center mb-4">
+            <div class="bg-purple-100 p-3 rounded-full mr-3">
+                <i class="fas fa-female text-purple-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">KPI In-House (100%)</h3>
+        </div>
+        
+        <div class="space-y-4">
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Kehadiran</span>
+                    <span class="font-bold text-purple-600">35%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-purple-500 h-3 rounded-full" style="width: 35%"></div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Closing Rate</span>
+                    <span class="font-bold text-purple-600">25%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-purple-500 h-3 rounded-full" style="width: 25%"></div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Produksi Konten</span>
+                    <span class="font-bold text-purple-600">20%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-purple-500 h-3 rounded-full" style="width: 20%"></div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Laporan Harian</span>
+                    <span class="font-bold text-purple-600">20%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-purple-500 h-3 rounded-full" style="width: 20%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Lapangan -->
+    <div class="bg-white p-6 rounded-xl shadow-lg hover-scale" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-3">
+                <i class="fas fa-male text-blue-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">KPI Lapangan (100%)</h3>
+        </div>
+        
+        <div class="space-y-4">
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Kehadiran</span>
+                    <span class="font-bold text-blue-600">35%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-blue-500 h-3 rounded-full" style="width: 35%"></div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Kunjungan Efektif</span>
+                    <span class="font-bold text-blue-600">25%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-blue-500 h-3 rounded-full" style="width: 25%"></div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Dokumentasi</span>
+                    <span class="font-bold text-blue-600">20%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-blue-500 h-3 rounded-full" style="width: 20%"></div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-gray-700">Laporan Harian</span>
+                    <span class="font-bold text-blue-600">20%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-blue-500 h-3 rounded-full" style="width: 20%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Sistem Tunjangan REVISI -->
+        <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white rounded-xl p-8 shadow-lg hover-scale" data-aos="fade-up">
+            <h3 class="text-2xl font-bold mb-6">Sistem Tunjangan Performa</h3>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full bg-white bg-opacity-20 rounded-lg">
+                    <thead>
+                        <tr>
+                            <th class="py-3 px-4 text-left border-b border-yellow-300">Pencapaian KPI</th>
+                            <th class="py-3 px-4 text-left border-b border-yellow-300">Tunjangan</th>
+                            <th class="py-3 px-4 text-left border-b border-yellow-300">Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-3 px-4 border-b border-yellow-300">≥80%</td>
+                            <td class="py-3 px-4 border-b border-yellow-300 font-bold">Rp2.000.000</td>
+                            <td class="py-3 px-4 border-b border-yellow-300">Full tunjangan</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 border-b border-yellow-300">70-79%</td>
+                            <td class="py-3 px-4 border-b border-yellow-300 font-bold">Rp1.500.000</td>
+                            <td class="py-3 px-4 border-b border-yellow-300">Peringatan 1x</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 border-b border-yellow-300">60-69%</td>
+                            <td class="py-3 px-4 border-b border-yellow-300 font-bold">Rp1.000.000</td>
+                            <td class="py-3 px-4 border-b border-yellow-300">Evaluasi coaching</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">≤59%</td>
+                            <td class="py-3 px-4 font-bold">Rp500.000</td>
+                            <td class="py-3 px-4">Teguran resmi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-6 pt-4 border-t border-yellow-300">
+                <h4 class="font-bold text-lg mb-3 text-yellow-200">Mekanisme Pembayaran:</h4>
+                <ul class="list-disc list-inside text-yellow-100 space-y-2">
+                    
+                    <li>Perhitungan berdasarkan pencapaian KPI individu</li>
+                    <li>Tim mencapai target 40 unit mendapatkan bonus tambahan</li>
+                    <li>Evaluasi dilakukan setiap akhir bulan oleh Manager MEA</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mapping Area Section - REVISED -->
+<section id="mapping" class="py-20 px-6 bg-white">
+    <div class="container mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Mapping <span class="gold-gradient">Area Kuningan</span></h2>
+            <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                Pembagian area pemasaran untuk Kertamulya Residence berdasarkan struktur tim KPI
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-xl shadow-md hover-scale" data-aos="fade-right">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">Distribusi Area Berdasarkan Tim</h3>
+                <p class="text-gray-600 mb-6">Kabupaten Kuningan dibagi berdasarkan struktur tim KPI dengan fokus pada area strategis:</p>
+                
+                <div class="space-y-6">
+                    <div class="border-l-4 border-green-500 pl-4 py-2">
+                        <h4 class="font-bold text-lg text-gray-800">Tim CS Admin (1 Orang)</h4>
+                        <p class="text-gray-600">Bertanggung jawab menangani semua leads Organik - Digital dan Canvasing Marketing</p>
+                        <p class="text-sm text-gray-500 mt-2">Target: 1.100 leads/bulan (20/hari)</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-purple-500 pl-4 py-2">
+                        <h4 class="font-bold text-lg text-gray-800">Tim In-House (2 Orang)</h4>
+                        <p class="text-gray-600">Bertanggung jawab untuk wilayah sekitar Perumahaan</p>
+                        <p class="text-sm text-gray-500 mt-2">Target: 55 closing/bulan</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-blue-500 pl-4 py-2">
+                        <h4 class="font-bold text-lg text-gray-800">Tim Lapangan (2 Orang)</h4>
+                        <p class="text-gray-600">Bertanggung jawab untuk wilayah Kabupaten Kuningan</p>
+                        <p class="text-sm text-gray-500 mt-2">Target: 15 kunjungan efektif/hari</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-xl shadow-md hover-scale" data-aos="fade-left">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">Strategi Pemasaran Terintegrasi</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-green-100 p-2 rounded-full mr-4">
+                            <i class="fas fa-map-marked-alt text-green-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Pembagian Waktu</h4>
+                            <p class="text-gray-600">Sesuai dengan alur kerja KPI:</p>
+                            <ul class="list-disc list-inside text-gray-600 mt-2">
+                                <li>Senin-Jumat: Operasional normal</li>
+                                <li>Sabtu: Event & open house</li>
+                                <li>Minggu: Follow-up & administrasi</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i class="fas fa-tasks text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sistem Pelaporan</h4>
+                            <p class="text-gray-600">Mengikuti sistem KPI:</p>
+                            <ul class="list-disc list-inside text-gray-600 mt-2">
+                                <li>Input data real-time ke Google Sheets</li>
+                                <li>Laporan harian aktivitas marketing</li>
+                                <li>Evaluasi mingguan berdasarkan KPI</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-yellow-100 p-2 rounded-full mr-4">
+                            <i class="fas fa-chart-pie text-yellow-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Alokasi Sumber Daya</h4>
+                            <p class="text-gray-600">Distribusi berdasarkan KPI:</p>
+                            <ul class="list-disc list-inside text-gray-600 mt-2">
+                                <li>70% fokus pada wilayah potensial tinggi</li>
+                                <li>20% eksplorasi area baru</li>
+                                <li>10% follow-up prospek lama</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+            <div class="p-6 md:p-8">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">Peta Wilayah Berdasarkan Tim KPI</h3>
+                <div class="map-container bg-gray-200">
+                    <img src="https://i.imgur.com/QeQE98u.jpg" alt="Peta Canvassing Kuningan" class="w-full h-full object-cover">
+                </div>
+                <div class="grid grid-cols-3 gap-4 mt-6">
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        <h4 class="font-bold text-green-700">CS Admin</h4>
+                        <p class="text-sm text-green-600">Seluruh Wilayah</p>
+                        <p class="text-xs text-green-500">Target: 1.100 leads</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                        <h4 class="font-bold text-purple-700">In-House</h4>
+                        <p class="text-sm text-purple-600">Area Perumahaan Internal</p>
+                        <p class="text-xs text-purple-500">Target: 55 closing</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-700">Lapangan</h4>
+                        <p class="text-sm text-blue-600">Kabupaten Kuningan</p>
+                        <p class="text-xs text-blue-500">Target: 15 kunjungan/hari</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- KPI Integration Section -->
+        <div class="mt-12 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl p-8 shadow-xl hover-scale" data-aos="fade-up">
+            <h3 class="text-2xl font-bold mb-6">Integrasi dengan Sistem KPI</h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white bg-opacity-20 p-6 rounded-lg glass-card">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-bullseye text-3xl text-yellow-400 mb-3"></i>
+                        <h4 class="font-bold text-lg">Target Terukur</h4>
+                    </div>
+                    <p class="text-blue-100 text-sm">Setiap tim memiliki target spesifik yang sesuai dengan area tanggung jawabnya dalam sistem KPI</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-20 p-6 rounded-lg glass-card">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-chart-line text-3xl text-yellow-400 mb-3"></i>
+                        <h4 class="font-bold text-lg">Monitoring Real-time</h4>
+                    </div>
+                    <p class="text-blue-100 text-sm">Aktivitas pemasaran di setiap area dilaporkan secara real-time sesuai standar KPI</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-20 p-6 rounded-lg glass-card">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-award text-3xl text-yellow-400 mb-3"></i>
+                        <h4 class="font-bold text-lg">Reward System</h4>
+                    </div>
+                    <p class="text-blue-100 text-sm">Pencapaian target area menjadi komponen utama dalam perhitungan bonus Tambahan Komisi</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image Modal -->
+<div id="imageModal" class="imageModal">
+    <div class="modal-container">
+        <button id="closeModal" class="closeModal">&times;</button>
+        <img id="modalImage" class="modalImage" src="" alt="Zoomed Image">
+    </div>
+</div>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-16 px-6">
+    <div class="container mx-auto">
+        <div class="grid md:grid-cols-4 gap-10 mb-12">
+            <!-- Brand Info -->
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <img src="https://i.imgur.com/yy0vB2n.png" alt="MEA Logo" class="h-10 mr-3">
+                    <span class="text-2xl font-bold text-white">MEA</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Mulia Estate Agency - Unit elite pemasaran properti digital dibawah naungan PT Rumah Mulia Indonesia.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition transform hover:scale-110">
+                        <i class="fab fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition transform hover:scale-110">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition transform hover:scale-110">
+                        <i class="fab fa-tiktok text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition transform hover:scale-110">
+                        <i class="fab fa-youtube text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-bold mb-6 text-yellow-400 border-b border-yellow-400 pb-2 inline-block">Navigasi Cepat</h3>
+                <ul class="space-y-3">
+                    <li><a href="#about" class="text-gray-400 hover:text-yellow-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-yellow-400"></i> Tentang MEA</a></li>
+                    <li><a href="#strategy" class="text-gray-400 hover:text-yellow-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-yellow-400"></i> Strategi Pemasaran</a></li>
+                    <li><a href="#structure" class="text-gray-400 hover:text-yellow-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-yellow-400"></i> Struktur Tim</a></li>
+                    <li><a href="#commission" class="text-gray-400 hover:text-yellow-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-yellow-400"></i> Skema Komisi</a></li>
+                    <li><a href="#roi" class="text-gray-400 hover:text-yellow-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-yellow-400"></i> ROI</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-lg font-bold mb-6 text-yellow-400 border-b border-yellow-400 pb-2 inline-block">Hubungi Kami</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <div class="bg-yellow-400 bg-opacity-20 p-2 rounded-full mr-3 mt-1">
+                            <i class="fas fa-map-marker-alt text-yellow-400 text-sm"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">Jalan Kertayasa, Blok Congkleng, Kertayasa, Kec. Sindangagung, Kabupaten Kuningan, Jawa Barat 45573</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="bg-yellow-400 bg-opacity-20 p-2 rounded-full mr-3 mt-1">
+                            <i class="fas fa-phone-alt text-yellow-400 text-sm"></i>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 text-sm">+62 89 7777 1080</span>
+                            <p class="text-gray-500 text-xs mt-1">Senin-Jumat, 08:00-17:00 WIB</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="bg-yellow-400 bg-opacity-20 p-2 rounded-full mr-3 mt-1">
+                            <i class="fas fa-envelope text-yellow-400 text-sm"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">info@mea-rumahmulia.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- PT RMI Info -->
+            <div>
+                <h3 class="text-lg font-bold mb-6 text-yellow-400 border-b border-yellow-400 pb-2 inline-block">PT Rumah Mulia Indonesia</h3>
+                <div class="flex items-start mb-4">
+                    <div class="bg-yellow-400 bg-opacity-20 p-2 rounded-full mr-3">
+                        <i class="fas fa-building text-yellow-400"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-400 text-sm mb-2">Developer utama properti syariah di Kuningan dengan konsep "Rumah untuk Semua".</p>
+                        <a href="#" class="text-yellow-400 text-sm hover:underline inline-flex items-center">
+                            Kunjungi Website <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 bg-opacity-50 p-4 rounded-lg border-l-4 border-yellow-400">
+                    <p class="text-gray-300 text-sm italic">"MEA merupakan unit bisnis resmi dibawah PT Rumah Mulia Indonesia dengan akta notaris No. 12/AKU/III/2025"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-800 pt-8 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    &copy; 2025 <span class="text-yellow-400">MEA - Mulia Estate Agency</span>. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-yellow-400 text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-yellow-400 text-sm transition">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-yellow-400 text-sm transition">Sitemap</a>
+                </div>
+            </div>
+            <p class="text-gray-600 text-xs mt-4">
+                Didukung penuh oleh <span class="text-yellow-400 font-medium">PT Rumah Mulia Indonesia</span> - Perusahaan pengembang properti syariah terpercaya di Kuningan.
+            </p>
+        </div>
+    </div>
+</footer>
+<!-- Presentation Mode Button -->
+<button id="presentation-btn" class="presentation-btn">
+    <i class="fas fa-expand"></i>
+</button>
+
+<!-- Presentation Progress Bar -->
+<div id="presentation-progress" class="presentation-progress"></div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+// Inisialisasi saat window selesai dimuat
+window.addEventListener('load', function() {
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+
+    // Panggil fungsi inisialisasi
+    initMobileMenu();
+    initAccordions();
+    initImageModals();
+    initPresentationMode();
+    initCharts();
+});
+
+// Fungsi untuk mobile menu
+function initMobileMenu() {
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        this.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('active');
+        
+        // Toggle icon
+        const icon = this.querySelector('i');
+        if (icon.classList.contains('fa-bars')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+}
+
+// Fungsi untuk accordion
+function initAccordions() {
+    document.querySelectorAll('.accordion button').forEach(button => {
+        button.addEventListener('click', () => {
+            const accordion = button.closest('.accordion');
+            accordion.classList.toggle('active');
+            
+            // Toggle icon rotation
+            const icon = button.querySelector('i');
+            icon.classList.toggle('rotate-180');
+        });
+    });
+}
+
+// Fungsi untuk image modal
+function initImageModals() {
+    document.querySelectorAll('.zoomable-image').forEach(image => {
+        image.addEventListener('click', () => {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modalImg.src = image.src;
+            modal.classList.add('active');
+        });
+    });
+
+    document.getElementById('closeModal').addEventListener('click', () => {
+        document.getElementById('imageModal').classList.remove('active');
+    });
+}
+
+// Fungsi untuk presentation mode
+function initPresentationMode() {
+    const presentationBtn = document.getElementById('presentation-btn');
+    const presentationModeBtn = document.getElementById('presentation-mode');
+    const sections = document.querySelectorAll('section');
+    const presentationProgress = document.getElementById('presentation-progress');
+    let currentSectionIndex = 0;
+    let isPresentationMode = false;
+
+    function enterPresentationMode() {
+        document.body.classList.add('presentation-mode');
+        isPresentationMode = true;
+        
+        sections.forEach((section, index) => {
+            section.classList.remove('active');
+            if (index === 0) section.classList.add('active');
+        });
+        
+        updateProgressBar();
+    }
+
+    function exitPresentationMode() {
+        document.body.classList.remove('presentation-mode');
+        isPresentationMode = false;
+        
+        sections.forEach(section => {
+            section.classList.remove('active');
+            section.style.display = 'block';
+        });
+        
+        presentationProgress.style.width = '0%';
+    }
+
+    function updateProgressBar() {
+        const progress = ((currentSectionIndex + 1) / sections.length) * 100;
+        presentationProgress.style.width = `${progress}%`;
+    }
+
+    function showSection(index) {
+        if (index < 0) index = sections.length - 1;
+        if (index >= sections.length) index = 0;
+        
+        currentSectionIndex = index;
+        
+        sections.forEach(section => section.classList.remove('active'));
+        sections[index].classList.add('active');
+        window.scrollTo(0, 0);
+        updateProgressBar();
+        
+        sections[index].classList.add('presentation-highlight');
+        setTimeout(() => {
+            sections[index].classList.remove('presentation-highlight');
+        }, 2000);
+    }
+
+    presentationModeBtn.addEventListener('click', () => {
+        isPresentationMode ? exitPresentationMode() : enterPresentationMode();
+    });
+
+    presentationBtn.addEventListener('click', () => {
+        isPresentationMode ? exitPresentationMode() : enterPresentationMode();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!isPresentationMode) return;
+        
+        switch (e.key) {
+            case 'ArrowRight':
+            case 'ArrowDown':
+            case ' ':
+                showSection(currentSectionIndex + 1);
+                break;
+            case 'ArrowLeft':
+            case 'ArrowUp':
+                showSection(currentSectionIndex - 1);
+                break;
+            case 'Escape':
+                exitPresentationMode();
+                break;
+        }
+    });
+}
+
+// Fungsi untuk inisialisasi chart
+function initCharts() {
+    // Revenue Chart
+    const revenueCtx = document.getElementById('revenueChart')?.getContext('2d');
+    if (revenueCtx) {
+        new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Komisi Kotor', 'Royalti RMI', 'Komisi Bersih'],
+                datasets: [{
+                    label: 'Nilai (Rp)',
+                    data: [171600000, 17160000, 154440000],
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.7)',
+                        'rgba(220, 38, 38, 0.7)',
+                        'rgba(16, 185, 129, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(220, 38, 38, 1)',
+                        'rgba(16, 185, 129, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+    }
+
+    // Target Chart
+    const targetCtx = document.getElementById('targetChart')?.getContext('2d');
+    if (targetCtx) {
+        new Chart(targetCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['BEP (12 Unit)', 'Target (40 Unit)', 'Potensi Keuntungan'],
+                datasets: [{
+                    data: [12, 28, 60],
+                    backgroundColor: [
+                        'rgba(220, 38, 38, 0.7)',
+                        'rgba(234, 179, 8, 0.7)',
+                        'rgba(16, 185, 129, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(220, 38, 38, 1)',
+                        'rgba(234, 179, 8, 1)',
+                        'rgba(16, 185, 129, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom' } }
+            }
+        });
+    }
+
+    // Commission Chart
+    const commissionCtx = document.getElementById('commissionChart')?.getContext('2d');
+    if (commissionCtx) {
+        new Chart(commissionCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Komisi Kotor (3%)', 'Royalti RMI (10%)', 'Komisi Bersih (2.7%)'],
+                datasets: [{
+                    data: [4290000, 429000, 3861000],
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.7)',
+                        'rgba(220, 38, 38, 0.7)',
+                        'rgba(16, 185, 129, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(220, 38, 38, 1)',
+                        'rgba(16, 185, 129, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom' } }
+            }
+        });
+    }
+
+    // Distribution Chart
+    const distributionCtx = document.getElementById('distributionChart')?.getContext('2d');
+    if (distributionCtx) {
+        new Chart(distributionCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Marketing Executive (1%)', 'Manager MEA (0.4%)', 'Bonus Marketing (0.2%)', 'Pengembangan Bisnis (0.3%)', 'Cadangan OPS (0.2%)', 'Dividen MEA & RMI (0.6%)'],
+                datasets: [{
+                    data: [1430000, 572000, 286000, 429000, 286000, 858000],
+                    backgroundColor: [
+                        'rgba(16, 185, 129, 0.7)',
+                        'rgba(234, 179, 8, 0.7)',
+                        'rgba(59, 130, 246, 0.7)',
+                        'rgba(139, 92, 246, 0.7)',
+                        'rgba(220, 38, 38, 0.7)',
+                        'rgba(212, 175, 55, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(16, 185, 129, 1)',
+                        'rgba(234, 179, 8, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(139, 92, 246, 1)',
+                        'rgba(220, 38, 38, 1)',
+                        'rgba(212, 175, 55, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { size: 12 },
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) label += ': ';
+                                label += 'Rp' + context.raw.toLocaleString('id-ID');
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+}
+</script>
+  
+</body>
+</html>
